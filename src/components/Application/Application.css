@@ -1,0 +1,9 @@
+.hero{
+    background:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #800020a1),url("../../assets/images/88ca98801b9941029b023c07169bc97b.jpg");
+    background-position: center, left;
+    height: 500px;
+    background-size: cover, cover;
+    color: #ffffff;
+    padding: 6rem 3rem;
+}

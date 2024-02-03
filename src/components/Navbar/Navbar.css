@@ -15,7 +15,7 @@ body{
     gap: 2rem;
     padding: 0 1rem;
     letter-spacing: 0.5px;
-    font-family: "Poppins";
+    font-family: "Libre Franklin";
     font-weight: 400;
     font-size: 30px;
 }
@@ -46,6 +46,6 @@ body{
 .nav li.active{
     background-color: #555;
 }
-.nav a:hover{
+.nav .link:hover{
     border-bottom: 5px solid #800020;
 }

@@ -10,10 +10,10 @@ export default function Navbar() {
             </Link>
         </div>
         <ul>
-            <CustomLink to="/application">Aplication</CustomLink>
-            <CustomLink to="/about">About</CustomLink>
-            <CustomLink to="/faq">FAQ</CustomLink>
-            <CustomLink to="/contact">Contact</CustomLink>
+            <CustomLink className ="link" to="/application">Aplication</CustomLink>
+            <CustomLink className ="link" to="/about">About</CustomLink>
+            <CustomLink className ="link" to="/faq">FAQ</CustomLink>
+            <CustomLink className ="link" to="/contact">Contact</CustomLink>
         </ul>
     </nav>
 }

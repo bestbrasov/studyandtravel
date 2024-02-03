@@ -6,6 +6,7 @@ import FAQ from './components/FAQ/FAQ';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
 import {Route, Routes} from "react-router-dom"
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
+    <Footer />
   </>
   )
 }

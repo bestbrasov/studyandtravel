@@ -1,0 +1,45 @@
+footer{
+    font-family: "Libre Franklin";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer ul{
+    padding: 0 1rem;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer li a{
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 1rem 1rem;
+}
+
+.footerOne{
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+    letter-spacing: 0.5px;
+    background-color: #dedcdc;
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.footerTwo {
+    width: 100%;
+    background-color: #cfcfcf;
+    color: black; 
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 20px;
+}

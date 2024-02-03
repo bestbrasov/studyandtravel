@@ -54,8 +54,8 @@ body{
     transition: filter 0.5s ease;
   }
 
-p{
-    font-family:'Poppins';
+.course p{
+    font-family:'Libre Franklin';
     font-weight: 300;
     font-size: 30px;
 }
