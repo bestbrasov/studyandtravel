@@ -1,61 +1,42 @@
-*{
-    box-sizing: border-box;  
-}
-
-body{
-    margin: 0;
-}
-
-.course{
-    float: left;
-    position: relative;
-    margin: 10px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.course img {
-    width: 100%;
-    height: auto;
-    transition: filter 0.3s ease;
-}
-
-.course .overlay-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px;    
-    width: 100%;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-/* New class with background over the image and centered text */
-.course .overlay-middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    box-sizing: border-box;
-    color: #fff;
-    text-align: center;
-    opacity: 1; 
-    transition: opacity 0.5s ease;
-}
-
-.course img.over {
-    filter: brightness(0.5);
-    transition: filter 0.5s ease;
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
   }
-
-.course p{
-    font-family:'Libre Franklin';
-    font-weight: 300;
-    font-size: 30px;
-}
+  
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .course-info {
+    padding: 16px;
+  }
+  
+  .course-info h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .course-info p {
+    font-size: 18px;
+    color: #555;
+  }
+  

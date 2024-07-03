@@ -1,0 +1,70 @@
+.wrapper {
+  background-color: #ffffff;
+  padding: 50px 5%; /* Add padding to left and right */
+  text-align: left; /* Align text to the left */
+}
+
+.page-header {
+  text-align: center; /* Center align the header */
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 20px;
+  color: #555555;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #555555; /* Add a bottom border */
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.content h4 {
+  font-size: 17px;
+  font-weight: 470;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.content a {
+  color: #0066cc; /* Color for links */
+  text-decoration: none; /* Remove underline */
+}
+
+.content a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .heroInner {
+    width: 90%;
+    height: 70%;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .content h4 {
+    font-size: 20px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+}

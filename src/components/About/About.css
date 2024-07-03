@@ -1,0 +1,32 @@
+* {
+    font-family: 'Libre Franklin';
+  }
+  
+.about-section {
+padding: 0 25rem;
+font-weight: 300;
+letter-spacing: 1px;
+font-size: 18px;
+color: #555555;
+}
+  
+.about-content {
+font-weight: 300;
+letter-spacing: 1px;
+font-size: 18px;
+color: #555555;
+text-align: justify;
+}
+
+.about-content p {
+font-size: 18px;
+line-height: 1.6;
+}
+
+header h1.page-title{
+    padding: 2rem 0;
+}
+
+.about-content p{
+    padding: 1.23rem 0;
+}
