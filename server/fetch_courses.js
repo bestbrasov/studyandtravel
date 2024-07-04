@@ -1,17 +1,17 @@
 require('dotenv').config({ path: '../.env' });
-
+const cron = require('node-cron');
 const axios = require('axios');
 const { Client } = require('pg');
 
-const client = new Client({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-});
-
 async function fetchCourses() {
+    const client = new Client({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT,
+    });
+
     try {
         await client.connect();
         await client.query("TRUNCATE TABLE cursuri");
@@ -82,4 +82,8 @@ function stripTags(html) {
     return html.replace(/<\/?[^>]+(>|$)/g, "").trim();
 }
 
-fetchCourses();
+// Schedule the job to run every 1st day of the month
+cron.schedule('0 0 1 * *', fetchCourses);
+
+// Uncomment the following line to test the function immediately
+// fetchCourses();
