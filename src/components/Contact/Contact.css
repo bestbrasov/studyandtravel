@@ -2,6 +2,18 @@
     font-family: 'Libre Franklin';
   }
   
+  .contact-hero {
+    background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #800020a1),
+      url("../../../public/assets/images/contact.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 600px;
+    height: fit-content;
+    color: #ffffff;
+    padding: 9rem 3rem;
+    margin-top: -90px;
+  }
+
   .wrapper {
     background-color: #ffffff;
     padding: 50px 5%; /* Add padding to left and right */

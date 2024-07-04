@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, Container, ThemeProvider } from "@mui/material";
+import { Link, useMatch, useResolvedPath, useLocation, useNavigate} from "react-router-dom";
+import { AppBar, Toolbar, IconButton, Container, ThemeProvider} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import myLogoScrolled from "../../assets/images/LogoWhite.png";
 import myLogo from "../../assets/images/Logo.png";
 import theme from './theme'; // Import the custom theme
+import { useQuestion } from '../Application/QuestionContext';
 import "./Navbar.css";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { setSelectedQuestion } = useQuestion();
+
+    const isCoursePage = location.pathname.startsWith('/course'); // Adjust the path based on your routing
 
     const handleScroll = () => {
         setIsScrolled(window.scrollY > 0);
@@ -18,6 +25,20 @@ export default function Navbar() {
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const handleDropdownOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleDropdownClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleQuestionSelect = (id) => {
+        setSelectedQuestion(id);
+        handleDropdownClose();
+        navigate('/application');
     };
 
     useEffect(() => {
@@ -29,15 +50,27 @@ export default function Navbar() {
 
     return (
         <ThemeProvider theme={theme}>
-            <AppBar position="fixed" className={`nav ${(isScrolled || isMobileMenuOpen) ? "scrolled" : ""}`}>
+            <AppBar 
+                position="fixed" 
+                className={`nav ${(isScrolled || isMobileMenuOpen) ? "scrolled" : ""} ${isCoursePage ? "course-page" : ""}`}
+            >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <Link to="/" className="logo">
-                            <img src={(isScrolled || isMobileMenuOpen) ? myLogoScrolled : myLogo} alt="BEST Courses" />
+                            <img src={(isScrolled || isMobileMenuOpen || isCoursePage) ? myLogoScrolled : myLogo} alt="BEST Courses" />
                         </Link>
                         <div className="grow" />
                         <div className="sectionDesktop">
-                            <CustomLink to="/application">Application</CustomLink>
+                            <div className="dropdown">
+                                <CustomLink onClick={handleDropdownOpen} to="/application">Application</CustomLink>
+                                <div className="dropdown-content">
+                                    <Link to="/application" onClick={() => handleQuestionSelect(1)}>Cine poate aplica?</Link>
+                                    <Link to="/application" onClick={() => handleQuestionSelect(2)}>Cum pot aplica?</Link>
+                                    <Link to="/application" onClick={() => handleQuestionSelect(3)}>Cum arata scrisoarea de motivatie?</Link>
+                                    <Link to="/application" onClick={() => handleQuestionSelect(4)}>Cum se valideaza contul?</Link>
+                                    <Link to="/application" onClick={() => handleQuestionSelect(5)}>Ce benficii si responsabilitati am?</Link>
+                                </div>
+                            </div>
                             <CustomLink to="/about">About</CustomLink>
                             <CustomLink to="/faq">FAQ</CustomLink>
                             <CustomLink to="/contact">Contact</CustomLink>

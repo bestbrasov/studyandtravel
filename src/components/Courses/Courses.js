@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Card, CardContent, CardMedia, Typography, Grid, Box } from "@mui/material";
 import "./Courses.css";
 
 const CourseList = () => {
@@ -20,20 +21,35 @@ const CourseList = () => {
   }, []);
 
   return (
-    <div className="course-list">
-      {courses.map((course, index) => (
-        <div key={index} className="course-card">
-          <Link to={`/course/${course.cod}`}>
-            <img src={`https://source.unsplash.com/1600x900/?${course.oras}`} alt={course.oras} className="course-image" />
-            <div className="course-info">
-              <h2>{course.titlu}</h2>
-              <p>{course.oras}, {course.tara}</p>
-              <p>{course.perioada}</p>
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
+    <Box className="course-list-container">
+      <Grid container spacing={4} justifyContent="center">
+        {courses.map((course, index) => (
+          <Grid item key={index} xs={12} sm={6} md={3}>
+            <Card className="course-card">
+              <Link to={`/course/${course.cod}`} className="course-link">
+                <CardMedia
+                  component="img"
+                  alt={course.tara}
+                  height="200"
+                  src={"/assets/images_citys/" + course.oras.toLowerCase() + ".jpg"}
+                />
+                <CardContent className="course-info">
+                  <Typography variant="h5" component="div" className="course-title">
+                    {course.titlu}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" className="course-location">
+                    {course.oras}, {course.tara}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" className="course-period" 
+                    dangerouslySetInnerHTML={{ __html: `Perioada: ${course.perioada}` }}>
+                  </Typography>
+                </CardContent>
+              </Link>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

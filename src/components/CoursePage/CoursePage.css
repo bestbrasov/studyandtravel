@@ -1,40 +1,127 @@
+/* General styles to match other CSS files */
+* {
+  font-family: 'Libre Franklin';
+}
+
 .course-page {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.course-hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.course-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.course-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.course-header h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.course-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero-button {
+  margin-top: 20px !important;
+  color: white !important;
+  font-size: 16px;
+}
+
+.hero-button:hover {
+  background-color: #7BCCEB !important; /* Slightly darker baby blue on hover */
+}
+
+.course-details {
+  margin-top: -60px;
+}
+
+.course-content-card, .course-extra-card {
+  padding: 20px;
+  background: #f5f5f5 !important; /* Light grey background for cards */
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-content {
+  text-align: left;
+}
+
+.course-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.course-content strong {
+  font-weight: bold;
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.course-icon {
+  margin-right: 10px;
+  color: #1976D2; /* Same dark blue as hero background */
+}
+
+.apply-button {
+  margin-top: 15px !important;
+  background-color: #4CAF50 !important; /* Green color for apply button */
+  color: white !important;
+}
+
+.apply-button:hover {
+  background-color: #45a049 !important; /* Slightly darker green on hover */
+}
+
+iframe{
+  width: 100%;
+  height: 300px;
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+  .course-page {
+    padding: 20px 0%;
   }
-  
-  .course-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+
   .course-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 32px;
   }
-  
+
   .course-header h2 {
-    font-size: 24px;
-    color: #555;
+    font-size: 20px;
   }
-  
-  .course-content {
-    text-align: left;
-  }
-  
-  .course-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
+
   .course-content p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
   }
-  
-  .course-content strong {
-    font-weight: bold;
-  }
-  
+}

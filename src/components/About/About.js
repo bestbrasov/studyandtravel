@@ -5,7 +5,7 @@ import './About.css';
 export default function About() {
   return (
     <>
-      <div className="hero">
+      <div className='about-hero'>
         <div className="heroInner"></div>
       </div>
       <div className='wrapper'>

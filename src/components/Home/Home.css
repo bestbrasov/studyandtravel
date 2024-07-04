@@ -6,9 +6,9 @@
     margin: 0;
   }
   
-  .hero {
+  .home-hero {
     background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #800020a1),
-      url("../../assets/images/88ca98801b9941029b023c07169bc97b.jpg");
+      url("../../../public/assets/images/acasa.jpg");
     background-position: center, left;
     background-size: cover, cover;
     min-height: 400px;

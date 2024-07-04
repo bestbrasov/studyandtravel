@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 import "./Home.css"
 import CourseList from "../Courses/Courses";
 
 const HeroSection = () => {
     return(
         <>
-        <div className="hero">
+        <div className='home-hero'>
           <div className="heroInner">
             <span>
             <h1>Study & Travel</h1>

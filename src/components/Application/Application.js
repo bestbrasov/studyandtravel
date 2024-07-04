@@ -1,9 +1,9 @@
-// applicationSection.js
-import React, { useState } from 'react';
+import React from 'react';
 import './Application.css';
+import { useQuestion } from './QuestionContext';
 
 const ApplicationSection = () => {
-  const [selectedQuestion, setSelectedQuestion] = useState(1);
+  const { selectedQuestion, setSelectedQuestion } = useQuestion();
 
   const questions = [
     { 
@@ -11,11 +11,11 @@ const ApplicationSection = () => {
         question: 'Cine poate aplica?', 
         answer: (
             <>
-            <header class="page-header">
-				<h1 class="page-title">Cine poate aplica?</h1>
+            <header className="page-header">
+				<h1 className="page-title">Cine poate aplica?</h1>
 			</header>
-			<article class="pagehentry">
-				<div class="entry-content">
+			<article className="pagehentry">
+				<div className="entry-content">
                     <h4>Cine poate aplica?</h4>
                     Orice student din cadrul Universităţii Transilvania poate aplica la cursurile de sezon BEST. <br />Dacă este în an terminal, acesta trebuie să fie student doar în momentul aplicării. 
                     <h4>Un student poate aplica la:</h4>
@@ -40,30 +40,30 @@ const ApplicationSection = () => {
         question: 'Cum pot aplica?', 
         answer: (
             <>
-            <header class="page-header">
-              <h1 class="page-title">Cum pot aplica?</h1>
+            <header className="page-header">
+              <h1 className="page-title">Cum pot aplica?</h1>
             </header>
-              <article class="pagehentry">
-                  <div class="entry-content">
+              <article className="pagehentry">
+                  <div className="entry-content">
                       Pentru a aplica la un eveniment BEST, există câteva reguli pe care trebuie să le îndeplineşti şi o procedura ce trebuie respectată:
                       <h4>O aplicaţie este formată din:</h4>
                       <ul>
-                      <li>crearea contului pe <a href="https://best.eu.org" target="_blank">www.best.eu.org</a> (site-ul general BEST)</li>
+                      <li>crearea contului pe <a href="https://best.eu.org" target="_blank" rel="noreferrer">www.best.eu.org</a> (site-ul general BEST)</li>
                       <li>o scrisoare de motivație</li>
                       <li>răspunsul la întrebările evenimentului BEST la care aplici (pot fi de la 1 la 3 întrebări)</li>
                       </ul>
                       <h4>Ce trebuie să faci?</h4>
                       <ul>
                       <li>Mergi la lista de evenimente, alege evenimentul la care doreşti să aplici și apasă butonul “Apply”.</li>
-                      <li>Introdu adresa ta de e-mail și parola, dacă nu eşti deja conectat (dacă nu ai încă un cont, înregistrează-te <a href="https://best.eu.org/account/registration.jsp" target="_blank">aici</a>).</li>
-                      <li>După crearea contului, <a href="contact.php">contactează-ne</a> să ne soliciţi să-ţi validăm contul.</li>
+                      <li>Introdu adresa ta de e-mail și parola, dacă nu eşti deja conectat (dacă nu ai încă un cont, înregistrează-te <a href="https://best.eu.org/account/registration.jsp" rel="noreferrer" target="_blank">aici</a>).</li>
+                      <li>După crearea contului, <a href="/contact">contactează-ne</a> să ne soliciţi să-ţi validăm contul.</li>
                       <li>Aplică la cursul/cursurile pe care le-ai ales.</li>
                       <li>Plăteşte depozitul de 40 de euro la BEST Braşov, dacă ai fost acceptat la unul dintre evenimente. Această sumă o vei primi înapoi în urma participării fără probleme la curs şi a completării formularului de feedback, de dupa întoarcerea în ţară).</li>
                       <li>Caută şi găseşte o metodă de a ajunge la eveniment (avion, tren, autocar).</li>
                       <li>Participă la eveniment respectând programul realizat de Grupul Local BEST care organizează cursul.</li>
                       <li>Plăteşte taxa de participare (taxa pentru participanții din Romania este de 60% din taxa cursului ales).</li>
                       <li>Bucură-te de cele trei mese pe zi, oferite de Grupul Local BEST organizator.</li>
-                      <li>Evaluează la final cursul pe <a href="https://best.eu.org/account/applications.jsp" target="_blank">www.best.eu.org</a>.</li>
+                      <li>Evaluează la final cursul pe <a href="https://best.eu.org/account/applications.jsp" target="_blank" rel="noreferrer">www.best.eu.org</a>.</li>
                       </ul>
                       <h4>Ai întrebări?</h4>
                       Ia legătura cu noi prin responsabilul de cursuri de sezon prin telefon la numarul, email la adresa sau prin formularul de contact.
@@ -77,11 +77,11 @@ const ApplicationSection = () => {
         question: 'Cum arata scrisoarea de motivatie?', 
         answer: (
             <>
-            <header class="page-header">
-				<h1 class="page-title">Scrisoarea de motivaţie</h1>
+            <header className="page-header">
+				<h1 className="page-title">Scrisoarea de motivaţie</h1>
 			</header>
-            <article class="pagehentry">
-                <div class="entry-content">
+            <article className="pagehentry">
+                <div className="entry-content">
                     Pentru orice curs vă decideţi să aplicaţi, trebuie să ştiţi că este necesară o scrisoare de motivaţie, în funcţie de care Grupurile Locale BEST din toată Europa îşi vor selecta participanţii. Criteriile de selecţie variază de la un grup la altul, dar scrisoarea de motivaţie are cu siguranţă cea mai mare pondere în alegerea participanţilor.
                     <br /><br />
                     Nu există o reţetă perfectă, datorită multitudinii de criterii dar cu siguranţă organizatorii
@@ -106,16 +106,16 @@ const ApplicationSection = () => {
         question: 'Cum se valideaza contul?',
         answer: (
           <>
-            <header class="page-header">
-                <h1 class="page-title">Validare cont</h1>
+            <header className="page-header">
+                <h1 className="page-title">Validare cont</h1>
             </header>
-            <article class="pagehentry">
-                <div class="entry-content">
+            <article className="pagehentry">
+                <div className="entry-content">
                     Pentru ca aplicaţia ta la curs să devină vizibilă, trebuie să ai contul activat.
 
                     <h4>Cum îmi activez contul?</h4>
                     <ul>
-                        <li>Trimite-ne un mesaj prin <a href="contact.php">formularul de contact</a>, specificând următoarele:
+                        <li>Trimite-ne un mesaj prin <a href="/contact">formularul de contact</a>, specificând următoarele:
                         <ul>
                             <li>numele complet</li>
                             <li>adresa de email</li>
@@ -137,11 +137,11 @@ const ApplicationSection = () => {
         question: 'Ce benficii si responsabilitati am?', 
         answer: (
             <>
-            <header class="page-header">
-                <h1 class="page-title">Beneficii şi responsabilităţi</h1>
-			</header>
-            <article class="pagehentry">
-                <div class="entry-content">
+            <header className="page-header">
+                <h1 className="page-title">Beneficii şi responsabilităţi</h1>
+            </header>
+            <article className="pagehentry">
+                <div className="entry-content">
                     <h4>Beneficii</h4>
                     Organizatorii vă vor oferi fără niciun cost suplimentar:
                     <ul>
@@ -179,8 +179,8 @@ const ApplicationSection = () => {
                         <li>Participanţii au obligaţia de a completa formularul de evaluare a evenimentului, pe site-ul BEST, după participare. Acest lucru trebuie făcut înainte de termenul limită specificat pe site-ul BEST.</li>
                     </ul><br /><br />
                     <strong>Important:</strong> Depozitul va fi returnat după ce ai participat la eveniment, ţi-ai respectat responsabilităţile și ai răspuns la mai mult de 70% din întrebările din formularul de evaluare de pe site-ul BEST.
-					</div>
-				</article>
+                    </div>
+                </article>
             </>
         )
     }
@@ -191,9 +191,10 @@ const ApplicationSection = () => {
     setSelectedQuestion(id);
   };
 
+
   return (
     <>
-        <div className="hero">
+        <div className='application-hero'>
             <div className="heroInner">
             </div>
         </div>

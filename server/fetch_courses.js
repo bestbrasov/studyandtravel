@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../config/.env' });
+require('dotenv').config({ path: '../.env' });
 
 const axios = require('axios');
 const { Client } = require('pg');
@@ -32,7 +32,18 @@ async function fetchCourses() {
             curs.descriere = extractData(event, '<h2>General description</h2>', '<h2> Academic information </h2>').trim();
             curs.locatie = extractData(event, '<strong>Place:</strong> ', '</li>').trim();
             curs.perioada = extractData(event, '<strong>Dates:</strong>', '</li>').trim();
-            curs.appdate = new Date(extractData(event, '<strong>Application until:</strong> ', ' CE').replace('at ', '').trim()).getTime();
+            const appdateString = extractData(event, '<strong>Application until:</strong> ', ' CE').replace('at ', '').trim();
+            curs.appdate = new Date(appdateString).getTime();
+
+            // Log appdate values
+            console.log('Original appdate string:', appdateString);
+            console.log('Parsed appdate timestamp:', curs.appdate);
+
+            // Replace invalid appdate with a default value
+            if (isNaN(curs.appdate)) {
+                console.error(`Invalid appdate value for course ${curs.cod}: ${appdateString}. Using default timestamp 0.`);
+                curs.appdate = 0; // You can replace 0 with any default timestamp value
+            }
 
             const derep = ["January","February","March","April","May","June","July","August","September","October","November","December"];
             const curep = ["ian","feb","mar","apr","mai","iun","iul","aug","sep","oct","noi","dec"];
@@ -50,7 +61,7 @@ async function fetchCourses() {
             if (curs.oras && curs.tara) {
                 await client.query(`
                     INSERT INTO cursuri (appdate, cod, titlu, tip, pret, descriere, locatie, perioada, oras, tara)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $10, $9)`,
                     [curs.appdate, curs.cod, curs.titlu, curs.tip, curs.pret, curs.descriere, curs.locatie, curs.perioada, curs.oras, curs.tara]
                 );
             }

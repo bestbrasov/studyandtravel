@@ -9,7 +9,7 @@ const name = process.env.REACT_APP_VIVALDI_NAME;
 export default function Contact() {
   return (
     <>
-      <div className="hero">
+      <div className='contact-hero'>
         <div className="heroInner"></div>
       </div>
       <div className='wrapper'>

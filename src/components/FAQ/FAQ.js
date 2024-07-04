@@ -5,7 +5,7 @@ import "./FAQ.css";
 const FAQ = () => {
   return (
     <>
-      <div className="hero">
+      <div className='faq-hero'>
         <div className="heroInner"></div>
       </div>
       <div className="wrapper">
