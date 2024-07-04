@@ -1,0 +1,116 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.footer {
+  font-family: "Libre Franklin";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: auto; /* Ensure it stays at the bottom */
+}
+
+.footer ul {
+  padding: 0 1rem;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* Center horizontally */
+}
+
+.footer li a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text */
+  padding: 1rem 1rem;
+}
+
+.footerOne {
+  width: 100%;
+  letter-spacing: 0.5px;
+  background-color: #dedcdc;
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 17px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+}
+
+.footerOne ul {
+  justify-content: center; /* Center horizontally */
+  margin: auto;
+  width: 600px;
+}
+
+.footerTwo {
+  width: 100%;
+  background-color: #cfcfcf;
+  color: black;
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footerOne {
+    font-size: 20px;
+  }
+
+  .footerOne ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footerTwo {
+    font-size: 18px;
+  }
+
+  .footer li a {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerOne {
+    font-size: 18px;
+    padding: 0.5rem;
+  }
+
+  .footerTwo {
+    font-size: 16px;
+    padding: 0.5rem;
+  }
+
+  .footer li a {
+    padding: 0.5rem 0;
+  }
+}

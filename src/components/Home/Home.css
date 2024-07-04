@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  .home-hero {
+    background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #800020a1),
+      url("../../../public/assets/images/acasa.jpg");
+    background-position: center, left;
+    background-size: cover, cover;
+    min-height: 400px;
+    height: fit-content;
+    color: #ffffff;
+    padding: 9rem 3rem;
+    margin-top: -90px;
+  }
+  
+  .heroInner {
+    display: flex;
+    width: 70%;
+    max-width: 1200px;
+    text-align: start;
+    padding-left: 30px;
+  }
+  
+  h1 {
+    font-family: 'Libre Franklin';
+    font-weight: 470;
+    letter-spacing: 3px;
+    font-size: 120px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-family: 'Libre Franklin';
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 48px;
+    width: 100%;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  
+  .bio {
+    background-color: #ffffe4;
+    text-align: center;
+    padding: 30px 40px;
+  }
+  
+  h3 {
+    font-family: 'Libre Franklin';
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 30px;
+    width: 100%;
+  }
+  
+  .courses {
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4.5rem 1.5rem;
+      margin-top: -45px;
+      min-height: 200px;
+    }
+  
+    .heroInner {
+      width: 90%;
+      padding-left: 15px;
+    }
+  
+    h1 {
+      font-size: 60px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .bio {
+      padding: 15px 20px;
+    }
+  
+    h3 {
+      font-size: 24px;
+    }
+  
+    .courses {
+      padding: 15px 20px;
+      flex-direction: column;
+    }
+  }
+  
