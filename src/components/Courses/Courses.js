@@ -9,7 +9,7 @@ const CourseList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3004/api/courses');
+        const response = await fetch('https://new-express-project-nine-flame.vercel.app/api/courses');
         const data = await response.json();
         setCourses(data);
       } catch (error) {
