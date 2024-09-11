@@ -15,7 +15,7 @@ const cors = require('cors');
 const { sql } = require('@vercel/postgres');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3004;
 
 app.use(cors());
 app.use(bodyParser.json());

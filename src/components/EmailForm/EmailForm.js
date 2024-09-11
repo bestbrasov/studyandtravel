@@ -21,7 +21,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('https://new-express-project-nine-flame.vercel.app/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

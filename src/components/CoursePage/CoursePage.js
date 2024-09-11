@@ -15,7 +15,7 @@ const CoursePage = () => {
     const fetchCourse = async () => {
       try {
         console.log(`Fetching course with cod: ${cod}`);
-        const response = await fetch(`http://localhost:3001/api/courses/${cod}`);
+        const response = await fetch(`https://studyandtravel.vercel.app/courses/${cod}`);
         if (!response.ok) {
           throw new Error('Course not found');
         }
