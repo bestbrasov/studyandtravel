@@ -1,11 +1,18 @@
-// Load environment variables from .env file
-require('dotenv').config({ path: '../.env' });
+// Load environment variables from the appropriate file for development or production
+const isDev = process.env.NODE_ENV !== 'production';
+if (isDev) {
+  // For development, use env.development.local or any specific local .env file
+  require('dotenv').config({ path: '../.env.development.local' });
+} else {
+  // In production, Vercel automatically sets environment variables from the dashboard
+  require('dotenv').config();
+}
 
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { Client } = require('pg');
+const { sql } = require('@vercel/postgres');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -53,27 +60,10 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Configure PostgreSQL client
-const client = new Client({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
-});
-
-client.connect(err => {
-  if (err) {
-    console.error('Failed to connect to PostgreSQL:', err);
-  } else {
-    console.log('Connected to PostgreSQL');
-  }
-});
-
 // Define a route to fetch all courses
 app.get('/api/courses', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM cursuri');
+    const result = await sql`SELECT * FROM cursuri`;
     res.json(result.rows);
   } catch (err) {
     console.error('Error fetching courses:', err);
@@ -85,7 +75,7 @@ app.get('/api/courses', async (req, res) => {
 app.get('/api/courses/:cod', async (req, res) => {
   const { cod } = req.params;
   try {
-    const result = await client.query('SELECT * FROM cursuri WHERE cod = $1', [cod]);
+    const result = await sql`SELECT * FROM cursuri WHERE cod = ${cod}`;
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Course not found' });
     }
