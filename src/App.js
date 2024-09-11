@@ -9,12 +9,14 @@ import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import { Route, Routes } from "react-router-dom";
 import { QuestionProvider } from "./components/Application/QuestionContext";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <>
       <QuestionProvider>
         <Navbar />
+        <Analytics />
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
