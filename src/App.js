@@ -6,6 +6,7 @@ import FAQ from './components/FAQ/FAQ';
 import CoursePage from './components/CoursePage/CoursePage';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
+import NotFound from './components/NotFound/NotFound';
 import { Route, Routes } from "react-router-dom";
 import { QuestionProvider } from "./components/Application/QuestionContext";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/course/:cod" element={<CoursePage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </QuestionProvider>

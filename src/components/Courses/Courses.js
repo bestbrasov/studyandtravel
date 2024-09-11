@@ -24,7 +24,7 @@ const CourseList = () => {
     <Box className="course-list-container">
       <Grid container spacing={4} justifyContent="center">
         {courses.map((course, index) => (
-          <Grid item key={index} xs={12} sm={6} md={3}>
+          <Grid item key={index} sm={12} md={10} xl={8}>
             <Card className="course-card">
               <Link to={`/course/${course.cod}`} className="course-link">
                 <CardMedia

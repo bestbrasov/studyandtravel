@@ -52,9 +52,8 @@ const FAQ = () => {
 
             <h4>6. Trebuie să completez formularul de evaluare online la un moment specific?</h4>
             Participanții la fiecare curs trebuie să completeze un formular de evaluare după încheierea evenimentului și
-            înainte de data limită specificată pentru fiecare sezon, detaliile fiind disponibile pe pagina aplicare la
-            secțiunea
-            <a href="https://studyandtravel.bestbrasov.ro/aplicare.php?page=beneficii"> beneficii</a>. În cazul în care un participant omite să furnizeze
+            înainte de data limită specificată pentru fiecare sezon, detaliile fiind disponibile pe pagina  
+            <a href="/application"> aplicare</a> la secțiunea beneficii. În cazul în care un participant omite să furnizeze
             o evaluare pentru eveniment, acesta va primi doar jumătate din depozitul inițial.
 
             <h4>7. Unde pot accesa formularul de evaluare?</h4>

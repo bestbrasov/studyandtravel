@@ -62,7 +62,7 @@ export default function Navbar() {
                         <div className="grow" />
                         <div className="sectionDesktop">
                             <div className="dropdown">
-                                <CustomLink onClick={handleDropdownOpen} to="/application">Application</CustomLink>
+                                <CustomLink onClick={handleDropdownOpen} to="/application">Aplicare</CustomLink>
                                 <div className="dropdown-content">
                                     <Link to="/application" onClick={() => handleQuestionSelect(1)}>Cine poate aplica?</Link>
                                     <Link to="/application" onClick={() => handleQuestionSelect(2)}>Cum pot aplica?</Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
                                     <Link to="/application" onClick={() => handleQuestionSelect(5)}>Ce benficii si responsabilitati am?</Link>
                                 </div>
                             </div>
-                            <CustomLink to="/about">About</CustomLink>
+                            <CustomLink to="/about">Despre</CustomLink>
                             <CustomLink to="/faq">FAQ</CustomLink>
                             <CustomLink to="/contact">Contact</CustomLink>
                         </div>

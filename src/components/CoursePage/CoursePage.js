@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Grid, Box, Container, Button } from '@mu
 import EventIcon from '@mui/icons-material/Event';
 import PlaceIcon from '@mui/icons-material/Place';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './CoursePage.css';
 
 const CoursePage = () => {
@@ -60,7 +61,7 @@ const CoursePage = () => {
             className="hero-button"
             href={`https://www.best.eu.org/event/details.jsp?activity=${course.cod}`}
           >
-            Learn More
+            Mai multe &nbsp; <KeyboardArrowRightIcon/>
           </Button>
         </Box>
       </Box>
@@ -82,13 +83,13 @@ const CoursePage = () => {
                   <Box className="course-info">
                     <EventIcon className="course-icon" />
                     <Typography variant="body2" color="text.secondary">
-                      Dates: {course.perioada}
+                      Data: {course.perioada}
                     </Typography>
                   </Box>
                   <Box className="course-info">
                     <PlaceIcon className="course-icon" />
                     <Typography variant="body2" color="text.secondary">
-                      Location: {course.locatie}
+                      Locație: {course.oras}, {course.tara}
                     </Typography>
                   </Box>
                   <Box className="course-info">
@@ -110,9 +111,9 @@ const CoursePage = () => {
                   <Button
                     variant="contained"
                     className="apply-button"
-                    href={`https://www.best.eu.org/apply/${course.cod}`}
+                    href={`https://www.best.eu.org/event/details.jsp?activity=${course.cod}`}
                   >
-                    Apply Now
+                    Aplică acum!
                   </Button>
                 )}
               </CardContent>

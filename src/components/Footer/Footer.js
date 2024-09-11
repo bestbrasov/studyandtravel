@@ -8,15 +8,15 @@ export default function Footer() {
         <footer className="footer">
             <div className="footerOne">
                 <ul>
-                    <CustomLink to="/application">Application</CustomLink>
-                    <CustomLink to="/about">About</CustomLink>
+                    <CustomLink to="/application">Aplicare</CustomLink>
+                    <CustomLink to="/about">Despre</CustomLink>
                     <CustomLink to="/faq">FAQ</CustomLink>
                     <CustomLink to="/contact">Contact</CustomLink>
                 </ul>
             </div>
             <div className="footerTwo">
                 <p>
-                    Copyright &copy; {currentYear} Board of European Students of Technology Brașov. Toate drepturile rezervate
+                    Copyright &copy; {currentYear} <a href="https://bestbrasov.ro/">Board of European Students of Technology Brașov</a>. Toate drepturile rezervate
                 </p>
             </div>
         </footer>
