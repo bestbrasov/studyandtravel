@@ -40,7 +40,7 @@ const CoursePage = () => {
     const timestamp = parseInt(course.appdate, 10);
     if (!isNaN(timestamp)) {
       const deadlineDate = new Date(timestamp);
-      appDeadline = deadlineDate.toLocaleDateString();
+      appDeadline = deadlineDate.toLocaleDateString('en-GB');
       isDeadlinePassed = deadlineDate < new Date();
     }
   }
