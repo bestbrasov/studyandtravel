@@ -2,12 +2,7 @@ import React from 'react';
 import ContactForm from "../EmailForm/EmailForm";
 import "./Contact.css";
 
-const isDev = process.env.NODE_ENV !== 'production';
-if (isDev) {
-  require('dotenv').config({ path: '../.env.development.local' });
-} else {
-  require('dotenv').config();
-}
+
 
 const email = process.env.REACT_APP_VIVALDI_EMAIL;
 const number = process.env.REACT_APP_VIVALDI_NUMBER;
@@ -26,8 +21,12 @@ export default function Contact() {
           </header>
           <div className="content">
             <p className="contact-detail"><b>{name}</b></p>
-            <p className="contact-detail"><b>{number}</b></p>
-            <p className="contact-detail"><b>{email}</b></p>
+            <p className="contact-detail">
+              <a href={`tel:${number}`}><b>{number}</b></a>
+            </p>
+            <p className="contact-detail">
+              <a href={`mailto:${email}`}><b>{email}</b></a>
+            </p>
           </div>
           <ContactForm />
         </div>

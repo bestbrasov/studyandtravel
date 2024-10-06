@@ -38,11 +38,15 @@
     text-align: center; /* Center align the contact information */
   }
   
-  .contact-detail {
+  .contact-detail a, .contact-detail b{
     font-size: 24px; /* Adjust font size */
-    font-weight: 300; /* Adjust font weight */
-    color: #333333; /* Adjust text color */
+    font-weight: 400; /* Adjust font weight */
+    color: #555555; /* Adjust text color */
     margin: 10px 0; /* Add margin for spacing */
+  }
+
+  .contact-detail a:hover{
+    text-decoration: none;
   }
   
   @media (max-width: 768px) {
