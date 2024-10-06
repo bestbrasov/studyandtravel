@@ -2,6 +2,13 @@ import React from 'react';
 import ContactForm from "../EmailForm/EmailForm";
 import "./Contact.css";
 
+const isDev = process.env.NODE_ENV !== 'production';
+if (isDev) {
+  require('dotenv').config({ path: '../.env.development.local' });
+} else {
+  require('dotenv').config();
+}
+
 const email = process.env.REACT_APP_VIVALDI_EMAIL;
 const number = process.env.REACT_APP_VIVALDI_NUMBER;
 const name = process.env.REACT_APP_VIVALDI_NAME;
